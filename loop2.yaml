@@ -1,0 +1,17 @@
+---
+- name: THIS PROGRAM FOR LOOPS IN YAML 
+  hosts: all
+  become: yes
+  vars:
+    - path1: /root/temp/DIR1
+    - path2: /root/temp/DIR2
+    - path3: /root/temp/DIR3
+  tasks:
+    - name: INSIDE THE ITEMS LOOP BLOCK
+      ansible.builtin.file:
+        path: "{{ items }}"
+        state: directory
+      loop:
+        - path1
+        - path2
+        - path3

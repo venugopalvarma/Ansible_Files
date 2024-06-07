@@ -1,0 +1,17 @@
+---
+- name: This program is nested-loops
+  hosts: all
+  become: yes
+  vars:
+    mysrc: 
+      - /root/temp/sample-file/root
+    mydest:
+      - /root
+  tasks:
+    - copy:
+        src: "{{ item[0] }}"
+        dest: "{{ item[1] }}"
+      with_nested:
+        - "{{ mysrc }}"
+        - "{{ mydest }}"
+        

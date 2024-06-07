@@ -1,0 +1,8 @@
+---
+- name: THIS IS MY FIRST PALYBOOK FILE
+  hosts: all
+  become: yes
+  tasks:
+    - copy:
+        src: /root/testfile
+        dest: /root/temp

@@ -1,0 +1,13 @@
+---
+- name: THIS YAML FILE FOR variable-file CONTENT
+  hosts: all
+  become: yes
+  vars-files:
+    - var-file.yaml
+    - dir-path.yaml
+  tasks:
+    - name: THIS TASKS FOR VARS-FILES
+      var: my_variable
+
+    - name: THIS TASKS FOR CREATE DIRECTORY THROUGH VARIABLES
+      var: path

@@ -1,0 +1,9 @@
+---
+- name: THIS IS FOR ANSIBLE VARIABLE
+  hosts: all
+  become: yes
+  tasks:
+    - name: THIS IS FOR DIRECTORY MODULE
+      file:
+        path: /root/temp/venu
+        state: directory

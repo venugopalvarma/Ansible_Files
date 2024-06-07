@@ -1,0 +1,13 @@
+---
+- name: This is demistrate hash-loop
+  hosts: all
+  become: yes
+
+  tasks:
+    - file:
+        path: "{{ item.a }}"
+        state: "{{ item.b }}"
+      with_items:
+        - { a.'/root/temp/DIR1', b.'present' }
+        - { a.'/root/temp/DIR2', b.'present' }
+        - { a.'/root/temp/DIR3', b.'present' }

@@ -1,0 +1,11 @@
+---
+- name: THIS IS FOR ANSIBLE VARIABLE
+  hosts: all
+  become: yes
+  vars:
+    file-path: /root/sample-file
+  tasks:
+    - name: THIS IS FOR COPY MODULE
+      copy:
+        src: "{{ file-path }}"
+        dest: /root/temp
